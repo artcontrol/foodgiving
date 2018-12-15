@@ -150,7 +150,7 @@ def createFoodDB(namedb):
     # Create table
     c.execute('''CREATE TABLE foods
              (name text, foodid integer, image text, datecook text, dateexpire text, 
-             ingredients text, location text, myid integer)''')
+             ingredients text, location text, myid integer, soldstatus integer)''')
 
     
 
@@ -162,7 +162,7 @@ def makeFoodEntry(name, image, datecooked, expiredate,
                  ingredients, location, myid):
     conn = sqlite3.connect('foodentry.db')
     c = conn.cursor()
-    c.execute("INSERT INTO foods VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(name, 
+    c.execute("INSERT INTO foods VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '0')".format(name, 
                                                                               returnCountFood() + 1, image, 
                                                                               datecooked, 
                                                                               expiredate, ingredients, location, myid))

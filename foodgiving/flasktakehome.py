@@ -52,6 +52,7 @@ def createfood():
         location = request.form.get('location')
         myid = request.form.get('myid')
 
+
         takehomeleft.makeFoodEntry(name, image, datecooked, 
                                    expiredate, ingredients, location, myid)
         return('food created')
