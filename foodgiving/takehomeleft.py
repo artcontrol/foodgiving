@@ -10,6 +10,7 @@
 
 import sqlite3
 import arrow
+from passlib.apps import custom_app_context as pwd_context
 
 
 # In[66]:
@@ -20,7 +21,7 @@ def createReviewDB(namedb):
     c = conn.cursor()
 
     # Create table
-    c.execute('''CREATE TABLE reviews (myid real, forid real, foodid real, rating real, comments text, datetime text)''')
+    c.execute('''CREATE TABLE reviews (myid integer, forid integer, foodid integer, rating integer, comments text, datetime text)''')
 
     
 
@@ -113,7 +114,7 @@ def createUserDB(namedb):
 
     # Create table
     c.execute('''CREATE TABLE users
-             (email text, password text, userid text, image text, name text, location text)''')
+             (email text, password text, userid integer, image text, name text, location text)''')
 
     
 
@@ -124,8 +125,10 @@ def createUserDB(namedb):
 def createUser(email, password, image, name, location):
     conn = sqlite3.connect('foodentry.db')
     c = conn.cursor()
+    hashpass = pwd_context.hash(password)
+
     c.execute("INSERT INTO users VALUES ('{}', '{}', '{}', '{}', '{}', '{}')".format(name, 
-                                                                              password, returnCountUsers() + 1, image, 
+                                                                              hashpass, returnCountUsers() + 1, image, 
                                                                               name, 
                                                                               location))
     
@@ -146,8 +149,8 @@ def createFoodDB(namedb):
 
     # Create table
     c.execute('''CREATE TABLE foods
-             (name text, foodid real, image text, datecook text, dateexpire text, 
-             ingredients text, location text, myid real)''')
+             (name text, foodid integer, image text, datecook text, dateexpire text, 
+             ingredients text, location text, myid integer)''')
 
     
 
