@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Rubik:700');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 32px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+header,
+footer, {
+  display: flex;
+	flex-wrap: wrap;
+}
+
+header {
+	padding: 0 2em;
+  background-color: rgb(58, 207, 115);
+}
+
+footer {
+	padding: 2em;
+  background-color: rgb(42, 44, 51);
+}
+
+.logo {
+	width: 200px;
+}
+
+.container {
+	height: 100%;
+  padding: 0 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.three-col-grid {
+	display: grid;
+  grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	margin: 0 auto;
+  /* grid-auto-rows: minmax(100px, auto); */
+	align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+h1 {
+	padding: 1em;
+	grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+.user-photo {
+	width: 80%;
+	padding: 0 10em;
+	grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+.description {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	grid-column: 1 / 4;
+}
+
+.description input {
+	width: 80%;
+	height: 10em;
+	margin: 0 20px;
+	line-height: 1.5em;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+  line-height: 1.5em;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  line-height: 1.5em;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  line-height: 1.5em;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  line-height: 1.5em;
+}
+
+.add-button,
+.submit-button {
+	grid-column: 1 / 4;
+}
+
+.submit-button ::after {
+	padding-bottom: 2em;
+}
+
+/*
+RESPONSIVE DESIGN
+*/
+@media screen and (max-width: 768px) {
+
+}
