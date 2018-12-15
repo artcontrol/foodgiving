@@ -37,16 +37,16 @@ FAVICON
 
 <body>
   <header>
-    <img class= "logo" src="images\foodGiving-NoShadow.svg" alt="FG Logo">
+    <img class= "logo" src="images\logo.svg" alt="FG Logo">
   </header>
 
   <div class="container">
-    <h1>Food to Give</h1>
+    <h3>Food to Give</h3>
     <form class="three-col-grid" method="POST">
-      <img class="user-photo" src="images\agriculture-beans-corn-142520.jpg">
+      <img class="user-photo" src="images\beantop.png">
       <div class="drop-down">
-        <h3>Food Type</h3>
-        <label>Please choose one:</label>
+
+        <label>Food Type:</label>
         <select name="food-types" class="field-select">
           <option value="Grains">Grains</option>
           <option value="Dairy Product">Dairy Product</option>
@@ -55,12 +55,11 @@ FAVICON
           <option value="Fruit">Fruit</option>
           <option value="Other">Other</option>
         </select>
-      </div>
+      </div><br>
       <div class="drop-down">
-        <h3>Food Quantity</h3>
         <span>
-          <input id="food-qty" type="text" name="food-quantity" placeholder="Qty"/>
-          <label>Unit:</label>
+          <label>Quantity:</label>
+          <input id="food-qty" type="text" name="food-quantity" placeholder="9000"/>
           <select name="food-measurements" class="field-select">
             <option value="item(s)">item(s)</option>
             <option value="kg">kg</option>
@@ -69,22 +68,24 @@ FAVICON
             <option value="millilitre">millilitre</option>
             <option value="cup">cup</option>
           </select>
-        </span>
+        </span><br>
       </div>
       <div class="text-field">
-        <h3>Expiration Date</h3>
+        <label>Expiration Date:</label>
         <input type="text" name="expiration-date" placeholder="dd/mm/yy"/>
       </div>
-      <div class="text-field description">
-        <h3>Description <span><i>(Optional)</i></span></h3>
+      <div class="text-field description"><br>
+        <label>Description:</label>
         <input type="text" name="description"
-        placeholder="Please provide details about the items"/>
+        placeholder="Please provide details about the items"/><br>
       </div>
       <button class="add-button" name="add-button">Add Food Entry</button>
       <button class="submit-button" name="submit-button">Enter Pick Up Detail</button>
     </form>
 
+
   </div>
+
 
   <footer>
   </footer>
